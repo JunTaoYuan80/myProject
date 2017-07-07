@@ -83,6 +83,18 @@
 		<version>2.6</version>
 		<scope>compile</scope>
 	</dependency>
+	
+	<dependency>
+	  <groupId>com.google.protobuf</groupId>
+	  <artifactId>protobuf-java</artifactId>
+	  <version>3.3.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>protobuf</groupId>
+	  <artifactId>protobuf</artifactId>
+	  <version>0.6.2</version>
+	</dependency>
   
     <dependency>
       <groupId>junit</groupId>

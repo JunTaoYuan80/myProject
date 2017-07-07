@@ -13,7 +13,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-		RedisTemplate<String, String> redisTemplate = (RedisTemplate<String, String>)ctx.getBean("redisTemplate");
+		RedisTemplate<Object, Object> redisTemplate = (RedisTemplate<Object, Object>)ctx.getBean("redisTemplate");
 		redisTemplate.afterPropertiesSet();
 		RedisLock lock = new RedisLock(redisTemplate, LOCK_KEY);
 		String oldTime = "";
