@@ -9,6 +9,10 @@ public class Test {
 		for(int i=0;i<ary.length;i++){
 			System.out.print(ary[i]+",");
 		}
+		
+		for(;;){
+			
+		}
 	}
 
 	public static void quickSort(int[] arr){

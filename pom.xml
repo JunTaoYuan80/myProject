@@ -95,6 +95,19 @@
 	  <artifactId>protobuf</artifactId>
 	  <version>0.6.2</version>
 	</dependency>
+	
+	<dependency>
+	  <groupId>com.sun.tools.btrace</groupId>
+	  <artifactId>btrace-boot</artifactId>
+	  <version>1.2.3</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>com.sun.tools.btrace</groupId>
+	  <artifactId>btrace-client</artifactId>
+	  <version>1.2.3</version>
+	</dependency>
+	
   
     <dependency>
       <groupId>junit</groupId>
