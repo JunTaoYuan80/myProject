@@ -218,7 +218,7 @@ public class SyncPrimitive implements Watcher {
 	}
 	
 	public static void queueTest(String[] args){
-		Queue q = new Queue(args[1], "/temp/app1");
+		Queue q = new Queue(args[1], "/home/yuanjuntao/app1");
 		System.out.println("Input address: "+args[1]);
 		Integer max = new Integer(args[2]);
 		if(args[3].equalsIgnoreCase("p")){
