@@ -27,7 +27,7 @@ public class LeaderElectionLauncher1 {
 				for(int i=0;i<futures.size();i++){
 					System.out.println(futures.get(i).get());
 				}
-			} catch (InterruptedException | ExecutionException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

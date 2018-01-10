@@ -33,7 +33,7 @@ public class ZooKeeperService {
 			}else{
 				createNodePath = zk.create(node, new byte[0], Ids.OPEN_ACL_UNSAFE, (ephimeral?CreateMode.EPHEMERAL_SEQUENTIAL:CreateMode.PERSISTENT));
 			}
-		} catch (KeeperException | InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -48,7 +48,7 @@ public class ZooKeeperService {
 			if(zk.exists(node, watch) != null){
 				watchNode = true;
 			}
-		} catch (KeeperException | InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -60,7 +60,7 @@ public class ZooKeeperService {
 		List<String> children = null;
 		try {
 			children = zk.getChildren(node, watch);
-		} catch (KeeperException | InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

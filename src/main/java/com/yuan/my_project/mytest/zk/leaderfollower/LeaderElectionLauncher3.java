@@ -15,10 +15,10 @@ public class LeaderElectionLauncher3 {
 		Thread.currentThread().setName("LeaderElectionLauncher3");
 		
 		try {
-			Future<String> future = service.submit(new ProcessNode<>(Thread.currentThread().getName(), HOST_ADDRESS));
+			Future<String> future = service.submit(new ProcessNode(Thread.currentThread().getName(), HOST_ADDRESS));
 			try {
 				System.out.println(future.get());
-			} catch (InterruptedException | ExecutionException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

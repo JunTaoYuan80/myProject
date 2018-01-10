@@ -33,7 +33,6 @@ public class SyncPrimitive implements Watcher {
 		}
 	}
 
-	@Override
 	public void process(WatchedEvent event) {
 		// TODO Auto-generated method stub
 		synchronized(mutex){
@@ -71,7 +70,7 @@ public class SyncPrimitive implements Watcher {
 					if(s == null){
 						zk.create(root, new byte[0], Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
 					}
-				} catch (KeeperException | InterruptedException e) {
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -226,7 +225,7 @@ public class SyncPrimitive implements Watcher {
 			for(int i=0;i<max;i++){
 				try {
 					q.produce(10+i);
-				} catch (KeeperException | InterruptedException e) {
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

@@ -1,8 +1,6 @@
 package com.yuan.my_project.mytest.classloaderanalysis;
 
 import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -54,19 +52,7 @@ public class DynamicLoad {
 			
 			
 			
-		} catch (ClassNotFoundException | IOException | InterruptedException | InstantiationException | IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -126,14 +112,14 @@ public class DynamicLoad {
 				l = l.getParent();
 			}
 			
-			ucl.close();
+			//ucl.close();
 			
 			
 			URLClassLoader ucl2 = new URLClassLoader(new URL[]{new URL(url)});
 			Class<?> c2 = ucl2.loadClass(innerName);
 			System.out.println("222222they are the same class?:"+(c == c2));
-			ucl2.close();
-		} catch (ClassNotFoundException | IOException e) {
+			//ucl2.close();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

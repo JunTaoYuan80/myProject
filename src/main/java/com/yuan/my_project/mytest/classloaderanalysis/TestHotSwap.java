@@ -1,6 +1,5 @@
 package com.yuan.my_project.mytest.classloaderanalysis;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class TestHotSwap {
@@ -18,7 +17,7 @@ class MonitorHotSwap implements Runnable{
 	private HotSwapURLClassLoader classLoader = null;
 	private Class<?> clazz = null;
 
-	@Override
+
 	public void run() {
 		// TODO Auto-generated method stub
 		while(true){
@@ -34,16 +33,7 @@ class MonitorHotSwap implements Runnable{
 				/*Inner4Test t = (Inner4Test)obj;
 				t.hot();*/
 				
-			} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

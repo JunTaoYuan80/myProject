@@ -93,7 +93,7 @@
 	<dependency>
 	  <groupId>protobuf</groupId>
 	  <artifactId>protobuf</artifactId>
-	  <version>0.6.2</version>
+	  <version>0.6.5</version>
 	</dependency>
 	
 	<dependency>
@@ -107,6 +107,13 @@
 	  <artifactId>btrace-client</artifactId>
 	  <version>1.2.3</version>
 	</dependency>
+
+
+	  <dependency>
+		  <groupId>com.alibaba</groupId>
+		  <artifactId>dubbo</artifactId>
+		  <version>2.5.6</version>
+	  </dependency>
 	
   
     <dependency>
