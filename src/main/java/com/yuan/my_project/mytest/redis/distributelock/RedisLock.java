@@ -1,7 +1,5 @@
 package com.yuan.my_project.mytest.redis.distributelock;
 
-import java.util.Random;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
@@ -9,6 +7,8 @@ import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+import java.util.Random;
 
 /**
  * 
@@ -53,7 +53,6 @@ public class RedisLock {
 		try{
 			obj = redisTemplate.execute(new RedisCallback<Object>() {
 	
-				@Override
 				public Object doInRedis(RedisConnection conn) throws DataAccessException {
 					// TODO Auto-generated method stub
 					StringRedisSerializer serializer = new StringRedisSerializer();
