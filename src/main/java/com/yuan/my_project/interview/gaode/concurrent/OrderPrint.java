@@ -68,26 +68,24 @@ public class OrderPrint {
 		t2.setName("Test2");
 		t2.start();
 		
-		Thread t3 = new Thread(new Runnable(){
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try {
-					for(;;){
-						//con2.await();
-						cdl2.await();
-						Thread.sleep(500);
-						System.out.println("C");
-						cdl2 = new CountDownLatch(1);
-						con3.compareAndSet(false, true);
-					}
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+		Thread t3 = new Thread(()->{
+			// TODO Auto-generated method stub
+			try {
+				for(;;){
+					//con2.await();
+					cdl2.await();
+					Thread.sleep(500);
+					System.out.println("C");
+					cdl2 = new CountDownLatch(1);
+					con3.compareAndSet(false, true);
 				}
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		});
 		t3.setName("Test3");
 		t3.start();
+
 	}
 }
