@@ -1,0 +1,13 @@
+1、AOP、拦截器、filter的区别及实现原理
+
+2、LRUCache的实现
+使用LinkedHashMap
+
+3、zookeeper的分布式队列、选举策略、分布式锁、节点类型
+
+4、系统怎么优化
+代码层面、机器层面
+
+
+
+
