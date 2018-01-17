@@ -56,7 +56,7 @@ public class ProcessNode<V> implements Callable<String> {
 			throw new IllegalStateException("Unable to create/access leader election root node with path:"+LEADER_ELECTION_ROOT_PATH);
 		}
 		
-		processNodePath = zooKeeperService.createNode(rootNodePath + PROCESS_NODE_PREFIX, false, true);
+		processNodePath = zooKeeperService.createNode(rootNodePath + PROCESS_NODE_PREFIX+id, false, true);
 		if(processNodePath == null){
 			throw new IllegalStateException("Unable to create/access process node with path:"+LEADER_ELECTION_ROOT_PATH);
 		}

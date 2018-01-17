@@ -13,11 +13,14 @@ Servlet中的过滤器Filter是实现了javax.servlet.Filter接口的服务器�
 拦截器是在面向切面编程中应用的，就是在你的service或者一个方法前调用一个方法，或者在方法后调用一个方法。是基于JAVA的反射机制。拦截器不是在web.xml，比如struts在struts.xml中配置，
 2、LRUCache的实现
 使用LinkedHashMap
+访问一条记录 -> 把链表head 指向当前记录 -> 当前记录中的next指向head之前指向的记录 -> 返回当前数据
+每访问一次数据，都把最新的访问的数据放到了链表头部，那链表尾部的数据就是最近没有访问过的数据！！ 当链表满了，从链表尾部开始往前删除指定数目的数据，就能在常数级时间内腾出空间！
+http://www.cnblogs.com/lzrabbit/p/3734850.html
 
 3、zookeeper的分布式队列、选举策略、分布式锁、节点类型
 
 4、系统怎么优化
-代码层面、机器层面
+代码层面、DB层面、JVM层面、机器层面
 
 
 
