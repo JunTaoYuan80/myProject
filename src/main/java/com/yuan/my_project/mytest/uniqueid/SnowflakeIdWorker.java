@@ -1,9 +1,8 @@
 package com.yuan.my_project.mytest.uniqueid;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Twitter_Snowflake<br>
@@ -18,6 +17,12 @@ import java.util.concurrent.atomic.AtomicLong;
  * SnowFlake的优点是，整体上按照时间自增排序，并且整个分布式系统内不会产生ID碰撞(由数据中心ID和机器ID作区分)，并且效率较高，经测试，SnowFlake每秒能够产生26万ID左右。
  * 缺点：a. 修改机器时间 可能会导致ID重复，可以通过NTP方式解决
  * b. 生成ID时使用synchronized锁，粒度太粗，把锁加到序列号的代码块 会好点
+ *
+ *
+ * 参考：
+ * https://www.cnblogs.com/relucent/p/4955340.html
+ * https://www.lanindex.com/twitter-snowflake%EF%BC%8C64%E4%BD%8D%E8%87%AA%E5%A2%9Eid%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/
+ * https://segmentfault.com/a/1190000011282426
  */
 public class SnowflakeIdWorker {
 
