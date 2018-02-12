@@ -60,7 +60,6 @@ public class SnowflakeIdWorker {
 
     /** 毫秒内序列(0~4095) */
     private long sequence = 0L;
-    private AtomicLong atomicSequence = new AtomicLong(0);
 
     /** 上次生成ID的时间截 */
     private long lastTimestamp = -1L;
