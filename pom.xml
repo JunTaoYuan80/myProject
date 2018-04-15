@@ -105,7 +105,7 @@
 	<dependency>
 	  <groupId>protobuf</groupId>
 	  <artifactId>protobuf</artifactId>
-	  <version>0.6.5</version>
+	  <version>0.6.4</version>
 	</dependency>
 	
 	<dependency>

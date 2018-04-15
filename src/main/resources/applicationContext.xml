@@ -14,6 +14,7 @@
 
 
 	<import resource="applicationContext-redis.xml"/>
+	<import resource="applicationContext-jedis.xml"/>
 	
 	
 </beans>
