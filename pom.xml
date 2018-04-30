@@ -1,138 +1,156 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.yuan</groupId>
-  <artifactId>my-project</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	<packaging>jar</packaging>
+    <groupId>com.yuan</groupId>
+    <artifactId>my-project</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
 
-  <name>my-project</name>
+    <name>my-project</name>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <modules>
+	    <module>common</module>
+        <module>server</module>
+        <module>biz</module>
+        <module>service</module>
+        <module>dao</module>
+        <module>test</module>
+    </modules>
 
-  <dependencies>
-  	<dependency>
-	  <groupId>org.springframework.data</groupId>
-	  <artifactId>spring-data-redis</artifactId>
-	  <version>1.8.3.RELEASE</version>
-	</dependency>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <rocketmq-client.version>4.2.0</rocketmq-client.version>
+    </properties>
 
-  	<dependency>
-	  <groupId>redis.clients</groupId>
-	  <artifactId>jedis</artifactId>
-	  <version>2.9.0</version>
-	</dependency>
-	
-  	<dependency>
-	  <groupId>org.apache.kafka</groupId>
-	  <artifactId>kafka_2.10</artifactId>
-	  <version>0.10.0.0</version>
-	</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.8.3.RELEASE</version>
+        </dependency>
 
-	<dependency>
-		<groupId>net.sf.json-lib</groupId>
-		<artifactId>json-lib</artifactId>
-		<classifier>jdk15</classifier>
-		<version>2.2.3</version>
-	</dependency>
-	
-	<dependency>
-		<groupId>com.sun.jersey</groupId>
-		<artifactId>jersey-json</artifactId>
-		<version>1.17</version>
-		<scope>compile</scope>
-	</dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
 
-	<dependency>
-		<groupId>com.google.code.gson</groupId>
-		<artifactId>gson</artifactId>
-		<version>2.2.4</version>
-		<scope>compile</scope>
-	</dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>0.10.0.0</version>
+        </dependency>
 
-	<dependency>
-	  <groupId>io.netty</groupId>
-	  <artifactId>netty-all</artifactId>
-	  <version>4.1.0.CR3</version>
-	</dependency>
-	
-	<dependency>
-	  <groupId>org.luaj</groupId>
-	  <artifactId>luaj-j2se</artifactId>
-	  <version>1.0.5</version>
-	</dependency>
-	
-	<dependency>
-	  <groupId>org.apache.zookeeper</groupId>
-	  <artifactId>zookeeper</artifactId>
-	  <version>3.4.8</version>
-	</dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <classifier>jdk15</classifier>
+            <version>2.2.3</version>
+        </dependency>
 
-	<dependency>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java</artifactId>
-		<version>5.1.21</version>
-		<scope>runtime</scope>
-	</dependency>
-  	<dependency>
-		<groupId>commons-lang</groupId>
-		<artifactId>commons-lang</artifactId>
-		<version>2.6</version>
-		<scope>compile</scope>
-	</dependency>
-	
-	<dependency>
-	  <groupId>com.google.protobuf</groupId>
-	  <artifactId>protobuf-java</artifactId>
-	  <version>3.3.1</version>
-	</dependency>
-	
-	<dependency>
-	  <groupId>protobuf</groupId>
-	  <artifactId>protobuf</artifactId>
-	  <version>0.6.4</version>
-	</dependency>
-	
-	<dependency>
-	  <groupId>com.sun.tools.btrace</groupId>
-	  <artifactId>btrace-boot</artifactId>
-	  <version>1.2.3</version>
-	</dependency>
-	
-	<dependency>
-	  <groupId>com.sun.tools.btrace</groupId>
-	  <artifactId>btrace-client</artifactId>
-	  <version>1.2.3</version>
-	</dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>1.17</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.0.CR3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.luaj</groupId>
+            <artifactId>luaj-j2se</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.21</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>protobuf</groupId>
+            <artifactId>protobuf</artifactId>
+            <version>0.6.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.tools.btrace</groupId>
+            <artifactId>btrace-boot</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.tools.btrace</groupId>
+            <artifactId>btrace-client</artifactId>
+            <version>1.2.3</version>
+        </dependency>
 
 
-	  <dependency>
-		  <groupId>com.alibaba</groupId>
-		  <artifactId>dubbo</artifactId>
-		  <version>2.5.6</version>
-	  </dependency>
-	
-  
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.5.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>${rocketmq-client.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

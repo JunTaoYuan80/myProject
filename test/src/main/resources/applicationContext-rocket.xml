@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="defaultTestProducer" class="com.alibaba.rocketmq.client.producer.DefaultMQProducer"
+          abstract="true">
+        <property name="namesrvAddr" value="${rocket_test_ip}"/>
+        <property name="producerGroup" value="${rocket_test_group}"/>
+    </bean>
+
+    <bean id="testProducer" parent="defaultTestProducer"
+          class="com.sq.rentcar.biz.mq.PaymentTaxiProducer" init-method="init" destroy-method="destroy">
+        <property name="topic" value="${taxi_pay_topic}"/>
+        <property name="retryTimesWhenSendFailed" value="${rocket.retry.time}"/>
+        <property name="sendMsgTimeout" value="${rocket.send.time.out}"/>
+    </bean>
+
+    <bean class="com.sq.rentcar.biz.mq.PassengerIncomeConsumer" init-method="init" destroy-method="destroy"
+          scope="singleton">
+        <property name="namesrvAddr" value="${passenger_income_url}"/>
+        <property name="consumerGroup" value="${passenger_income_group}"/>
+        <property name="topic" value="${passenger_income_topic}"/>
+        <property name="reconsumeTimes" value="${rocket.consumer.time}"/>
+    </bean>
+
+
+</beans>
