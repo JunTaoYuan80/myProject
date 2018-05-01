@@ -9,19 +9,22 @@
         <property name="producerGroup" value="${rocket_test_group}"/>
     </bean>
 
+    <!-- producer -->
     <bean id="testProducer" parent="defaultTestProducer"
-          class="com.sq.rentcar.biz.mq.PaymentTaxiProducer" init-method="init" destroy-method="destroy">
-        <property name="topic" value="${taxi_pay_topic}"/>
+          class="com.yuan.my_project.mq.rocketmq.TestProducer" init-method="init" destroy-method="destroy">
+        <property name="topic" value="${rocket_test_topic}"/>
         <property name="retryTimesWhenSendFailed" value="${rocket.retry.time}"/>
         <property name="sendMsgTimeout" value="${rocket.send.time.out}"/>
     </bean>
 
-    <bean class="com.sq.rentcar.biz.mq.PassengerIncomeConsumer" init-method="init" destroy-method="destroy"
+
+    <!-- consumer -->
+    <bean class="com.yuan.my_project.mq.rocketmq.TestConsumer" init-method="init" destroy-method="destroy"
           scope="singleton">
-        <property name="namesrvAddr" value="${passenger_income_url}"/>
-        <property name="consumerGroup" value="${passenger_income_group}"/>
-        <property name="topic" value="${passenger_income_topic}"/>
-        <property name="reconsumeTimes" value="${rocket.consumer.time}"/>
+        <property name="namesrvAddr" value="${rocket_test_ip}"/>
+        <property name="consumerGroup" value="${rocket_test_group}"/>
+        <property name="topic" value="${rocket_test_topic}"/>
+        <property name="reconsumeTimes" value="${rocket_reconsume_times}"/>
     </bean>
 
 

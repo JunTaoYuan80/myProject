@@ -15,15 +15,89 @@
         <module>biz</module>
         <module>service</module>
         <module>dao</module>
-        <module>test</module>
+        <module>my-test</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <rocketmq-client.version>4.2.0</rocketmq-client.version>
+        <config.rocketmq-client.version>3.5.8</config.rocketmq-client.version>
+        <org.springframework>4.2.4.RELEASE</org.springframework>
+        <junit.version>4.11</junit.version>
+        <servlet-api>2.5</servlet-api>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${org.springframework}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet-api}</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.config.rocketmq</groupId>-->
+            <!--<artifactId>config.rocketmq-client</artifactId>-->
+            <!--<version>${config.rocketmq-client.version}</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.0.0-incubating</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
@@ -100,11 +174,11 @@
             <version>3.3.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>protobuf</groupId>
-            <artifactId>protobuf</artifactId>
-            <version>0.6.4</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>protobuf</groupId>-->
+            <!--<artifactId>protobuf</artifactId>-->
+            <!--<version>3.3.0</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.sun.tools.btrace</groupId>
@@ -126,16 +200,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
-            <version>${rocketmq-client.version}</version>
-        </dependency>
-
-
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
