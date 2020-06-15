@@ -21,7 +21,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <config.rocketmq-client.version>3.5.8</config.rocketmq-client.version>
-        <org.springframework>4.2.4.RELEASE</org.springframework>
+        <org.springframework>5.2.7.RELEASE</org.springframework>
         <junit.version>4.11</junit.version>
         <servlet-api>2.5</servlet-api>
         <lombok.version>1.16.16</lombok.version>
