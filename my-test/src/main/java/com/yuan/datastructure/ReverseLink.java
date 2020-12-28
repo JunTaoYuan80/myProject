@@ -45,18 +45,18 @@ public class ReverseLink {
         if (a == null) {
             return null;
         }
-        Node pre = null;
+        Node head = null;
         Node cur = a;
         Node nxt = a;
         while (cur != null) {
             nxt = cur.getRight();
             //当前节点反转，顺序循环处理
-            cur.setRight(pre);
-            pre = cur;
+            cur.setRight(head);
+            head = cur;
             cur = nxt;
         }
         //返回头节点
-        return pre;
+        return head;
     }
 
 
